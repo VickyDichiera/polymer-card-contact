@@ -1,0 +1,52 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+<!--
+`polymer-card-contact`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="polymer-card-contact">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>[[title]]</h2>
+
+    <paper-card image="demo/donuts.png">
+      <div class="card-content">
+         <img src="{{user.picture.large}}">
+        <div class="cafe-header">
+          {{user.name}} {{user.last}}
+        </div>
+        <p><label>Phone: </label><span>{{ user.phone }}</span></p>
+        <p><label>Email: </label><span>{{ user.email }}</span></p>
+      </div>
+      <div class="card-actions">
+        <div class="horizontal justified">
+          <paper-icon-button icon="favorite-border"></paper-icon-button>
+        </div>
+      </div>
+    </paper-card>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'polymer-card-contact',
+
+      properties: {
+        title: {
+          type: String,
+          value: 'Contact card',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
