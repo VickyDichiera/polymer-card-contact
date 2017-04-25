@@ -29,7 +29,7 @@
           <template is="dom-if" if="{{!user.favorite}}">
             <paper-icon-button icon="favorite-border" on-tap="_toggleFavorite"></paper-icon-button>
           </template>
-          <template is="dom-if" if="{{!user.favorite}}">
+          <template is="dom-if" if="{{user.favorite}}">
             <paper-icon-button icon="favorite" on-tap="_toggleFavorite"></paper-icon-button>
           </template>
         </div>
