@@ -6,7 +6,8 @@
     "paper-card": "PolymerElements/paper-card#^1.1.6",
     "iron-icon": "PolymerElements/iron-icon#^1.0.13",
     "iron-elements": "PolymerElements/iron-elements#^1.0.10",
-    "paper-elements": "PolymerElements/paper-elements#^1.0.7"
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.1.5"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
