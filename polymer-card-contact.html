@@ -50,13 +50,12 @@
         },
         user:{
           type:Object,
+          value: { phone: 11, name: 'Mr. Nice', last:"last", favorite:false, email: 'contact@mail.com'},
         },
         fullName: {
          type: String,
          computed: 'computeFullName(user.name, user.last)'
        },
-
-
       },
       computeFullName: function(first, last) {
         return first + ' ' + last;
