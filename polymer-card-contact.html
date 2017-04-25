@@ -1,6 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
-
 <!--
 `polymer-card-contact`
 
@@ -61,8 +60,7 @@
       },
       computeFullName: function(first, last) {
         return first + ' ' + last;
-      }
-
+      },
       _toggleFavorite: function() {
         //console.log('favorite' + user.favorite);
         this.fire('toggleFavorite', this.user);
