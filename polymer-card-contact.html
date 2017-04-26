@@ -88,7 +88,7 @@
       _toggleFavorite: function(event, param) {
         this.favorite = !this.favorite;
         this.favoriteIcon = this.favorite ? 'favorite':'favorite-border';
-        this.fire('updateFavorite', {user: this.user});
+        this.fire('updateFavorite', {userId: this.id});
       },
 
       _computeFullName: function(first, last) {
