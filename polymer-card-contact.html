@@ -27,12 +27,7 @@
       </div>
       <div class="card-actions">
         <div class="horizontal justified">
-          <template is="dom-if" if="{{!favorite}}">
-            <paper-icon-button icon="favorite-border" on-tap="_toggleFavorite"></paper-icon-button>
-          </template>
-          <template is="dom-if" if="{{favorite}}">
-            <paper-icon-button icon="favorite" on-tap="_toggleFavorite"></paper-icon-button>
-          </template>
+          <paper-icon-button icon="{{favoriteIcon}}" on-tap="_toggleFavorite"></paper-icon-button>
         </div>
       </div>
     </paper-card>
@@ -64,7 +59,7 @@
         favorite: {
           type: String,
           notify: true, //this.fire('changed', this.favorite);
-          value: false,
+          value: true,
         },
         email: {
           type: String,
@@ -76,17 +71,26 @@
         },
         picture:{
           type: String,
-          value: 'https://randomuser.me/api/portraits/med/men/83.jpg',
+          value: 'https://randomuser.me/api/portraits/men/83.jpg',
         },
         fullName: {
          type: String,
-         computed: 'computeFullName(name, last)',
+         computed: '_computeFullName(name, last)',
        },
+        favoriteIcon: {
+          type: String,
+          value: 'favorite-border',
+          computed: '_changeIcon(favorite)'
+        }
       },
       _toggleFavorite: function(event, param) {
         this.favorite = !this.favorite;
       },
-      computeFullName: function(first, last) {
+      _changeIcon: function(newValue, oldValue){
+        console.log(newValue);
+        return this.favoriteIcon = newValue ? 'favorite':'favorite-border';
+      },
+      _computeFullName: function(first, last) {
         return first + ' ' + last;
       },
 
