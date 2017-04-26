@@ -59,7 +59,8 @@
         favorite: {
           type: String,
           notify: true, //this.fire('changed', this.favorite);
-          value: true,
+          value: undefined,
+          observer: '_checkFavorite'
         },
         email: {
           type: String,
@@ -93,6 +94,9 @@
       _computeFullName: function(first, last) {
         return first + ' ' + last;
       },
+      _checkFavorite: function(newValue, oldValue){
+        newValue ? this.favorite = newValue: this.favorite = false;
+      }
 
     });
   </script>
