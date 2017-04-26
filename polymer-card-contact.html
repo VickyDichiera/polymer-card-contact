@@ -48,6 +48,9 @@
           type:Object,
           value: { phone: 11, name: 'Mr. Nice', last:"last", favorite:false, email: 'contact@mail.com'},
         },*/
+        id:{
+          type: Number,
+        },
         name:{
           type: String,
           value: 'Jose',
@@ -85,6 +88,7 @@
       _toggleFavorite: function(event, param) {
         this.favorite = !this.favorite;
         this.favoriteIcon = this.favorite ? 'favorite':'favorite-border';
+        this.fire('updateFavorite', {user: this.user});
       },
 
       _computeFullName: function(first, last) {
