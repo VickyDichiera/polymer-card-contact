@@ -60,7 +60,6 @@
           type: String,
           notify: true, //this.fire('changed', this.favorite);
           value: undefined,
-          observer: '_checkFavorite'
         },
         email: {
           type: String,
@@ -81,22 +80,16 @@
         favoriteIcon: {
           type: String,
           value: 'favorite-border',
-          computed: '_changeIcon(favorite)'
         }
       },
       _toggleFavorite: function(event, param) {
         this.favorite = !this.favorite;
+        this.favoriteIcon = this.favorite ? 'favorite':'favorite-border';
       },
-      _changeIcon: function(newValue, oldValue){
-        console.log(newValue);
-        return this.favoriteIcon = newValue ? 'favorite':'favorite-border';
-      },
+
       _computeFullName: function(first, last) {
         return first + ' ' + last;
       },
-      _checkFavorite: function(newValue, oldValue){
-        newValue ? this.favorite = newValue: this.favorite = false;
-      }
 
     });
   </script>
