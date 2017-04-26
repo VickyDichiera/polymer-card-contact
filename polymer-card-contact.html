@@ -16,14 +16,14 @@
       :host {
         display: block;
       }
+      .card{
+        display: inline-block;
+      }
     </style>
-    <h2>[[title]]</h2>
+    <h2>{{fullName}}</h2>
 
-    <paper-card image="{{picture}}">
+    <paper-card image="{{picture}}" class="card">
       <div class="card-content">
-        <div class="cafe-header">
-          {{fullName}}
-        </div>
         <p><label>Phone: </label><span>{{ phone }}</span></p>
         <p><label>Email: </label><span>{{ email }}</span></p>
       </div>
